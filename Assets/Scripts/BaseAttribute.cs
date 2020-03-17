@@ -12,9 +12,9 @@ public class BaseAttribute {
     }
 
 
-    public BaseAttribute(int baseValue, int baseMultiplier = 0) {
-        BaseValue = baseValue;
-        BaseMultiplier = baseMultiplier;
+    public BaseAttribute(int value, int multiplier = 0) {
+        BaseValue = value;
+        BaseMultiplier = multiplier;
     }
 
 }
