@@ -16,14 +16,14 @@ public class Character : MonoBehaviour {
 
     private Attribute strengthAttribute;
     private Attribute magicAttribute;
-    private Attribute speedAttribute;
+    private DependantAttribute speedAttribute;
     private Attribute agilityAttribute;
 
 
     private void Awake() {
         strengthAttribute = new Attribute(strengthValue);
         magicAttribute = new Attribute(magicValue);
-        speedAttribute = new Attribute(speedValue);
+        speedAttribute = new DependantAttribute(speedValue);
         agilityAttribute = new Attribute(agilityValue);
     }
 
@@ -33,7 +33,7 @@ public class Character : MonoBehaviour {
         magicAttribute.AddBonus(new StandardBonus(magicBonus, 0.1f));
 
         //Add dependant attribute
-        speedAttribute.AddBonus(agilityAttribute);
+        speedAttribute.AddBonus(agilityAttribute, 5);
     }
 
     private void Update() {

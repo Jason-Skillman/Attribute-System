@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class Attribute : BaseAttribute {
 
-    private List<BaseAttribute> bonuses;
+    protected List<BaseAttribute> bonuses;
 
-    public int FinalValue {
-        get; private set;
+    protected int FinalValue {
+        get; set;
     }
 
     
@@ -20,7 +20,7 @@ public class Attribute : BaseAttribute {
     /// Adds the bonus to the attribute
     /// </summary>
     /// <param name="bonus">The bonus to add</param>
-    public void AddBonus(BaseAttribute bonus) {
+    public virtual void AddBonus(BaseAttribute bonus) {
         bonuses.Add(bonus);
     }
 
@@ -28,7 +28,7 @@ public class Attribute : BaseAttribute {
     /// Removes the bonus from the attrubute
     /// </summary>
     /// <param name="bonus">The bonus to remove</param>
-    public void RemoveBonus(BaseAttribute bonus) {
+    public virtual void RemoveBonus(BaseAttribute bonus) {
         bonuses.Remove(bonus);
     }
 
@@ -36,7 +36,7 @@ public class Attribute : BaseAttribute {
     /// Calculates the final value of the attribute
     /// </summary>
     /// <returns>The final value</returns>
-    public int CalculateValue() {
+    public virtual int CalculateValue() {
         //Start with this attribute's base value
         FinalValue = BaseValue;
 
@@ -48,7 +48,7 @@ public class Attribute : BaseAttribute {
             //If the attribute is another attribute then get the final value instead
             if(bonus.GetType().Equals(typeof(Attribute))) {
                 Attribute attribute = (Attribute)bonus;
-                FinalValue += attribute.FinalValue;
+                FinalValue += attribute.CalculateValue();
             } else {
                 bonusValue += bonus.BaseValue;
                 bonusMultiplier += bonus.BaseMultiplier;
