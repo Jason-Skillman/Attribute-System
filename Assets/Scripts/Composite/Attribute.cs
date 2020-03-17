@@ -16,7 +16,7 @@ public class Attribute : BaseAttribute {
     /// Adds the bonus to the attribute
     /// </summary>
     /// <param name="bonus">The bonus to add</param>
-    public void AddBonus(RawBonus bonus) {
+    public void AddBonus(BaseAttribute bonus) {
         bonuses.Add(bonus);
     }
 
@@ -24,7 +24,7 @@ public class Attribute : BaseAttribute {
     /// Removes the bonus from the attrubute
     /// </summary>
     /// <param name="bonus">The bonus to remove</param>
-    public void RemoveBonus(RawBonus bonus) {
+    public void RemoveBonus(BaseAttribute bonus) {
         bonuses.Remove(bonus);
     }
 
