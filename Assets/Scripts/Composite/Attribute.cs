@@ -69,7 +69,7 @@ public class Attribute : BaseAttribute {
         }
 
         FinalValue += rawBonusValue;
-        FinalValue *= (int)Math.Floor(1 + rawBonusMultiplier);
+        FinalValue = (int)Math.Floor(FinalValue * (1 + rawBonusMultiplier));
 
 
         //Add to FinalValue from final value
@@ -82,7 +82,7 @@ public class Attribute : BaseAttribute {
         }
 
         FinalValue += finalBonusValue;
-        FinalValue *= (int)Math.Floor(1 + finalBonusMultiplier);
+        FinalValue = (int)Math.Floor(FinalValue * (1 + finalBonusMultiplier));
 
         return FinalValue;
     }
