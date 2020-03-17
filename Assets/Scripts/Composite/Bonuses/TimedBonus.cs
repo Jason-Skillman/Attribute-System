@@ -24,7 +24,7 @@ public class TimedBonus : BaseAttribute {
     /// <summary>
     /// Callback when the timer has run out
     /// </summary>
-    public void OnTimerFinished(object source, ElapsedEventArgs e) {
+    private void OnTimerFinished(object source, ElapsedEventArgs e) {
         parent.RemoveBonus(this);
     }
 

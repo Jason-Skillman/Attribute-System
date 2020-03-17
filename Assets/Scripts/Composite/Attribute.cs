@@ -7,7 +7,7 @@ public class Attribute : BaseAttribute {
     private List<BaseAttribute> bonuses;
 
     
-    public Attribute(int startingValue) : base(startingValue) {
+    public Attribute(int baseValue) : base(baseValue) {
         bonuses = new List<BaseAttribute>();
     }
 
