@@ -19,11 +19,10 @@ public class Character : MonoBehaviour {
 
     private void Start() {
         //Add level up bonuses
-        strengthAttribute.AddBonus(new RawBonus(strengthBonus));
+        strengthAttribute.AddBonus(new StandardBonus(strengthBonus));
+        strengthAttribute.AddBonus(new StandardBonus(9, 0.1f));
 
-        //strengthAttribute.AddBonus(new RawBonus(9, 0.1f));
-
-        strengthAttribute.AddBonus(new TimedBonus(strengthAttribute, 3000, 5));
+        //strengthAttribute.AddBonus(new TimedBonus(strengthAttribute, 3000, 5));
     }
 
     private void Update() {
