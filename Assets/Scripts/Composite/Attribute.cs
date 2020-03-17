@@ -6,6 +6,10 @@ public class Attribute : BaseAttribute {
 
     private List<BaseAttribute> bonuses;
 
+    public int FinalValue {
+        get; private set;
+    }
+
     
     public Attribute(int baseValue) : base(baseValue) {
         bonuses = new List<BaseAttribute>();
@@ -34,22 +38,28 @@ public class Attribute : BaseAttribute {
     /// <returns>The final value</returns>
     public int CalculateValue() {
         //Start with this attribute's base value
-        int finalValue = BaseValue;
+        FinalValue = BaseValue;
 
         //Collect all of the base values and multipliers
         int bonusValue = 0;
         float bonusMultiplier = 0;
 
         foreach(BaseAttribute bonus in bonuses) {
-            bonusValue += bonus.BaseValue;
-            bonusMultiplier += bonus.BaseMultiplier;
+            //If the attribute is another attribute then get the final value instead
+            if(bonus.GetType().Equals(typeof(Attribute))) {
+                Attribute attribute = (Attribute)bonus;
+                FinalValue += attribute.FinalValue;
+            } else {
+                bonusValue += bonus.BaseValue;
+                bonusMultiplier += bonus.BaseMultiplier;
+            }
         }
 
         //Add the value and multiplier
-        finalValue += bonusValue;
-        finalValue = (int)Math.Floor(finalValue * (1 + bonusMultiplier));
+        FinalValue += bonusValue;
+        FinalValue = (int)Math.Floor(FinalValue * (1 + bonusMultiplier));
 
-        return finalValue;
+        return FinalValue;
     }
 
 }
