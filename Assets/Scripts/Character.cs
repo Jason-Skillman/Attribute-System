@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
-    [Header("Attributes")]
+    [Header("Base Attributes")]
     public int strengthValue = 10;
 
     [Header("Level up Bonues")]
@@ -19,9 +19,9 @@ public class Character : MonoBehaviour {
 
     private void Start() {
         //Add level up bonuses
-        strengthAttribute.AddRawBonus(new RawBonus(strengthBonus));
+        strengthAttribute.AddBonus(new RawBonus(strengthBonus));
 
-        strengthAttribute.AddRawBonus(new RawBonus(9, 0.1f));
+        strengthAttribute.AddBonus(new RawBonus(9, 0.1f));
     }
 
     private void Update() {
