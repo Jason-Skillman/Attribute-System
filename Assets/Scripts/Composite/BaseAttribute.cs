@@ -7,12 +7,12 @@ public class BaseAttribute {
         get; private set;
     }
 
-    public int BaseMultiplier {
+    public float BaseMultiplier {
         get; private set;
     }
 
 
-    public BaseAttribute(int value, int multiplier = 0) {
+    public BaseAttribute(int value, float multiplier = 0) {
         BaseValue = value;
         BaseMultiplier = multiplier;
     }

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 public class Attribute : BaseAttribute {
@@ -60,7 +61,7 @@ public class Attribute : BaseAttribute {
 
         //Add to FinalValue from raw value
         int rawBonusValue = 0;
-        int rawBonusMultiplier = 0;
+        float rawBonusMultiplier = 0;
 
         foreach(RawBonus bonus in rawBonuses) {
             rawBonusValue += bonus.BaseValue;
@@ -68,12 +69,12 @@ public class Attribute : BaseAttribute {
         }
 
         FinalValue += rawBonusValue;
-        FinalValue *= (1 + rawBonusMultiplier);
+        FinalValue *= (int)Math.Floor(1 + rawBonusMultiplier);
 
 
         //Add to FinalValue from final value
         int finalBonusValue = 0;
-        int finalBonusMultiplier = 0;
+        float finalBonusMultiplier = 0;
 
         foreach(FinalBonus bonus in finalBonuses) {
             finalBonusValue += bonus.BaseValue;
@@ -81,7 +82,7 @@ public class Attribute : BaseAttribute {
         }
 
         FinalValue += finalBonusValue;
-        FinalValue *= (1 + finalBonusMultiplier);
+        FinalValue *= (int)Math.Floor(1 + finalBonusMultiplier);
 
         return FinalValue;
     }
