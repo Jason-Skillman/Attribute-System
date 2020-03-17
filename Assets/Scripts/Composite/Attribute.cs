@@ -4,52 +4,28 @@ using System.Collections.Generic;
 
 public class Attribute : BaseAttribute {
 
-    private List<RawBonus> rawBonuses;
-    private List<FinalBonus> finalBonuses;
-
-    private int FinalValue {
-        get; set;
-    }
+    private List<BaseAttribute> bonuses;
 
     
     public Attribute(int startingValue) : base(startingValue) {
-        rawBonuses = new List<RawBonus>();
-        finalBonuses = new List<FinalBonus>();
-
-        FinalValue = BaseValue;
+        bonuses = new List<BaseAttribute>();
     }
 
 
     /// <summary>
-    /// Adds the raw bonus to the attribute
+    /// Adds the bonus to the attribute
     /// </summary>
-    /// <param name="bonus">The raw bonus to add</param>
-    public void AddRawBonus(RawBonus bonus) {
-        rawBonuses.Add(bonus);
+    /// <param name="bonus">The bonus to add</param>
+    public void AddBonus(BaseAttribute bonus) {
+        bonuses.Add(bonus);
     }
 
     /// <summary>
-    /// Removes the raw bonus from the attrubute
+    /// Removes the bonus from the attrubute
     /// </summary>
-    /// <param name="bonus">The raw bonus to remove</param>
-    public void RemoveRawBonus(RawBonus bonus) {
-        rawBonuses.Remove(bonus);
-    }
-
-    /// <summary>
-    /// Adds the final bonus to the attribute
-    /// </summary>
-    /// <param name="bonus">The final bonus to add</param>
-    public void AddFinalBonus(FinalBonus bonus) {
-        finalBonuses.Add(bonus);
-    }
-
-    /// <summary>
-    /// Removes the final bonus from the attrubute
-    /// </summary>
-    /// <param name="bonus">The final bonus to remove</param>
-    public void RemoveFinalBonus(FinalBonus bonus) {
-        finalBonuses.Remove(bonus);
+    /// <param name="bonus">The bonus to remove</param>
+    public void RemoveBonus(BaseAttribute bonus) {
+        bonuses.Remove(bonus);
     }
 
     /// <summary>
@@ -57,34 +33,23 @@ public class Attribute : BaseAttribute {
     /// </summary>
     /// <returns>The final value</returns>
     public int CalculateValue() {
-        FinalValue = BaseValue;
+        //Start with this attribute's base value
+        int finalValue = BaseValue;
 
-        //Add to FinalValue from raw value
-        int rawBonusValue = 0;
-        float rawBonusMultiplier = 0;
+        //Collect all of the base values and multipliers
+        int bonusValue = 0;
+        float bonusMultiplier = 0;
 
-        foreach(RawBonus bonus in rawBonuses) {
-            rawBonusValue += bonus.BaseValue;
-            rawBonusMultiplier += bonus.BaseMultiplier;
+        foreach(BaseAttribute bonus in bonuses) {
+            bonusValue += bonus.BaseValue;
+            bonusMultiplier += bonus.BaseMultiplier;
         }
 
-        FinalValue += rawBonusValue;
-        FinalValue = (int)Math.Floor(FinalValue * (1 + rawBonusMultiplier));
+        //Add the value and multiplier
+        finalValue += bonusValue;
+        finalValue = (int)Math.Floor(finalValue * (1 + bonusMultiplier));
 
-
-        //Add to FinalValue from final value
-        int finalBonusValue = 0;
-        float finalBonusMultiplier = 0;
-
-        foreach(FinalBonus bonus in finalBonuses) {
-            finalBonusValue += bonus.BaseValue;
-            finalBonusMultiplier += bonus.BaseMultiplier;
-        }
-
-        FinalValue += finalBonusValue;
-        FinalValue = (int)Math.Floor(FinalValue * (1 + finalBonusMultiplier));
-
-        return FinalValue;
+        return finalValue;
     }
 
 }
