@@ -6,6 +6,8 @@ public class Attribute : BaseAttribute {
 
     protected List<BaseAttribute> bonuses;
 
+    private Dictionary<Attribute, int> requiredRatios;
+
     protected int FinalValue {
         get; set;
     }
@@ -13,6 +15,7 @@ public class Attribute : BaseAttribute {
     
     public Attribute(int baseValue) : base(baseValue) {
         bonuses = new List<BaseAttribute>();
+        requiredRatios = new Dictionary<Attribute, int>();
     }
 
 
@@ -20,23 +23,37 @@ public class Attribute : BaseAttribute {
     /// Adds the bonus to the attribute
     /// </summary>
     /// <param name="bonus">The bonus to add</param>
-    public virtual void AddBonus(BaseAttribute bonus) {
+    public void AddBonus(BaseAttribute bonus) {
         bonuses.Add(bonus);
+    }
+
+    /// <summary>
+    /// Adds a dependant attribute and sets a ratio for it
+    /// </summary>
+    /// <param name="bonus">The dependant attribute</param>
+    /// <param name="ratio">The value ratio</param>
+    public void AddBonus(Attribute bonus, int ratio) {
+        AddBonus(bonus);
+        requiredRatios.Add(bonus, ratio);
     }
 
     /// <summary>
     /// Removes the bonus from the attrubute
     /// </summary>
     /// <param name="bonus">The bonus to remove</param>
-    public virtual void RemoveBonus(BaseAttribute bonus) {
+    public void RemoveBonus(BaseAttribute bonus) {
         bonuses.Remove(bonus);
+
+        try {
+            requiredRatios.Remove((Attribute)bonus);
+        } catch(InvalidCastException e) { }
     }
 
     /// <summary>
     /// Calculates the final value of the attribute
     /// </summary>
     /// <returns>The final value</returns>
-    public virtual int CalculateValue() {
+    public int CalculateValue() {
         //Start with this attribute's base value
         FinalValue = BaseValue;
 
@@ -48,7 +65,13 @@ public class Attribute : BaseAttribute {
             //If the attribute is another attribute then get the final value instead
             if(bonus.GetType().Equals(typeof(Attribute))) {
                 Attribute attribute = (Attribute)bonus;
-                FinalValue += attribute.CalculateValue();
+
+                //Find the final value and divide by ratio if found
+                int amountRequired;
+                if(requiredRatios.TryGetValue(attribute, out amountRequired))
+                    FinalValue += (attribute.CalculateValue() / amountRequired);
+                else
+                    FinalValue += attribute.CalculateValue();
             } else {
                 bonusValue += bonus.BaseValue;
                 bonusMultiplier += bonus.BaseMultiplier;

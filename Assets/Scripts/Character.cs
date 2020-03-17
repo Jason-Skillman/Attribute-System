@@ -16,14 +16,14 @@ public class Character : MonoBehaviour {
 
     private Attribute strengthAttribute;
     private Attribute magicAttribute;
-    private DependantAttribute speedAttribute;
+    private Attribute speedAttribute;
     private Attribute agilityAttribute;
 
 
     private void Awake() {
         strengthAttribute = new Attribute(strengthValue);
         magicAttribute = new Attribute(magicValue);
-        speedAttribute = new DependantAttribute(speedValue);
+        speedAttribute = new Attribute(speedValue);
         agilityAttribute = new Attribute(agilityValue);
     }
 
@@ -42,6 +42,10 @@ public class Character : MonoBehaviour {
             strengthAttribute.AddBonus(new TimedBonus(strengthAttribute, 3000, 5));
         } else if(Input.GetKeyDown(KeyCode.Alpha2)) {
             agilityAttribute.AddBonus(new TimedBonus(agilityAttribute, 3000, 5));
+        }
+
+        if(Input.GetKeyDown(KeyCode.Alpha0)) {
+            speedAttribute.RemoveBonus(agilityAttribute);
         }
 
         Debug.Log("Strength Value: " + strengthAttribute.CalculateValue());
