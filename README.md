@@ -1,8 +1,5 @@
 # Attribute-System
-Unity Project: A simple RPG attribute system utilizing the composite design pattern.
+Created a RPG player stat system which is heavily extendable. This is my modified design and the original tutorial has been posted below.
 
-My own modified design but inspired by the original developer.
-
-Tutorial Author: Daniel Sidhion
-
-Link: https://gamedevelopment.tutsplus.com/tutorials/using-the-composite-design-pattern-for-an-rpg-attributes-system--gamedev-243
+#### Original Tutorial
+- https://gamedevelopment.tutsplus.com/tutorials/using-the-composite-design-pattern-for-an-rpg-attributes-system--gamedev-243
