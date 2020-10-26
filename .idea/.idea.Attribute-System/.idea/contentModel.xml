@@ -15,7 +15,11 @@
               <e p="TimedBonus.cs" t="Include" />
             </e>
           </e>
-          <e p="Character.cs" t="Include" />
+          <e p="Tests" t="Include">
+            <e p="Character.cs" t="Include" />
+            <e p="CharacterTest.cs" t="Include" />
+            <e p="PrintCharacterStats.cs" t="Include" />
+          </e>
         </e>
       </e>
       <e p="Attribute-System.sln" t="IncludeFlat" />

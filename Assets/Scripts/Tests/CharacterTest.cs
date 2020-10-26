@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class CharacterTest : MonoBehaviour {
 
     [Header("Base Attributes")]
     public int strengthValue = 10;

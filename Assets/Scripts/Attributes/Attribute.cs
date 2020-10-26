@@ -8,16 +8,12 @@ public class Attribute : BaseAttribute {
 
     private Dictionary<Attribute, int> requiredRatios;
 
-    protected int FinalValue {
-        get; set;
-    }
+    protected int FinalValue { get; set; }
 
-    
     public Attribute(int baseValue) : base(baseValue) {
         bonuses = new List<BaseAttribute>();
         requiredRatios = new Dictionary<Attribute, int>();
     }
-
 
     /// <summary>
     /// Adds the bonus to the attribute
