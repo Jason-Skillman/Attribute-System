@@ -14,6 +14,7 @@
               <e p="StandardBonus.cs" t="Include" />
               <e p="TimedBonus.cs" t="Include" />
             </e>
+            <e p="BonusNode.cs" t="Include" />
           </e>
           <e p="Tests" t="Include">
             <e p="Character.cs" t="Include" />

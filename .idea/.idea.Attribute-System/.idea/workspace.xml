@@ -23,8 +23,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/AttributeTree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AttributeTree.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/Character.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/Character.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +33,8 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Attributes/BonusNode.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CAFB29D5-2338-47FB-B4ED-CF8D7C32B1E3/c2/a7aa5318/Dictionary`2.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Tests/CharacterTest.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -46,6 +46,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/TimedBonus.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/AttributeNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/BonusNode.cs" />
       </list>
     </option>
   </component>
@@ -88,7 +90,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1603752673796</updated>
-      <workItem from="1603752678436" duration="3049000" />
+      <workItem from="1603752678436" duration="5263000" />
     </task>
     <servers />
   </component>
