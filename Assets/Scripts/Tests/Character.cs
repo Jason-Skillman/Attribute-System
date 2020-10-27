@@ -15,7 +15,11 @@ public class Character : MonoBehaviour {
 	private Attribute strengthAttribute;
 	private Attribute speedAttribute;
 	private Attribute intelligenceAttribute;
-	
+
+	public Attribute StrengthAttribute => strengthAttribute;
+	public Attribute SpeedAttribute => speedAttribute;
+	public Attribute IntelligenceAttribute => intelligenceAttribute;
+
 	private void Awake() {
 		strengthAttribute = new Attribute(strengthValue);
 		speedAttribute = new Attribute(speedValue);

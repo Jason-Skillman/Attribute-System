@@ -1,18 +1,21 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
-public class PrintCharacterStats : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class PrintCharacterStats : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+	[SerializeField]
+	private Character character;
+
+	[SerializeField]
+	private TMP_Text textStrength, textSpeed, textIntelligence;
+
+	private void Update() {
+		textStrength.text = character.StrengthAttribute.CalculateValue().ToString();
+		textSpeed.text = character.SpeedAttribute.CalculateValue().ToString();
+		textIntelligence.text = character.IntelligenceAttribute.CalculateValue().ToString();
+	}
+
 }
