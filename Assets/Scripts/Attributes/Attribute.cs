@@ -10,6 +10,8 @@ public class Attribute : BaseAttribute {
 
     protected int FinalValue { get; set; }
 
+    public List<BaseAttribute> Bonuses => bonuses;
+
     public Attribute(int baseValue) : base(baseValue) {
         bonuses = new List<BaseAttribute>();
         requiredRatios = new Dictionary<Attribute, int>();

@@ -46,9 +46,9 @@ public class BonusNode : MonoBehaviour {
 
 		if(attributeType == AttributeType.Strength)
 			character.StrengthAttribute.AddBonus(bonus);
-		else if(attributeType == AttributeType.Strength)
+		else if(attributeType == AttributeType.Speed)
 			character.SpeedAttribute.AddBonus(bonus);
-		else if(attributeType == AttributeType.Strength)
+		else if(attributeType == AttributeType.Intelligence)
 			character.IntelligenceAttribute.AddBonus(bonus);
 
 		button.interactable = false;

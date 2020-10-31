@@ -20,14 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fa925751-00d7-4508-a6c2-12f0a77911a1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Attribute-System/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/BonusNode.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/BonusNode.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/AttributeTree.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/AttributeTree.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attributes/BaseAttribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attributes/BaseAttribute.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attributes/BonusNode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attributes/BonusNode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/StandardBonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/StandardBonus.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/TimedBonus.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/TimedBonus.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Attributes/Attribute.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Attributes/Attribute.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,16 +40,16 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/CharacterTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/Attribute.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Tests/Character.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/AttributeNode.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/SkillAttribute.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/SkillBonus.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/BaseAttribute.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/StandardBonus.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/Bonuses/TimedBonus.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/BonusNode.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Attributes/Attribute.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Tests/PrintCharacterStats.cs" />
       </list>
     </option>
   </component>
@@ -103,7 +96,7 @@
       <option name="presentableId" value="Default" />
       <updated>1603752673796</updated>
       <workItem from="1603752678436" duration="5263000" />
-      <workItem from="1604159666790" duration="1425000" />
+      <workItem from="1604159666790" duration="1826000" />
     </task>
     <servers />
   </component>
