@@ -224,9 +224,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attributeType: 0
+  bonusName: 
   bonusValue: 0
   activeNodeColor: {r: 0.015686275, g: 1, b: 0.105882354, a: 0.39215687}
   character: {fileID: 0}
+  titleText: {fileID: 2366591551843383178}
+  bodyText: {fileID: 7370740803712243617}
   button: {fileID: 2366591551333467821}
   image: {fileID: 2366591551623294189}
 --- !u!1 &2366591551843383176

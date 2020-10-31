@@ -1,7 +1,4 @@
 ﻿using System.Timers;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class TimedBonus : BaseAttribute {
 
@@ -9,7 +6,7 @@ public class TimedBonus : BaseAttribute {
     private Timer timer;
     
     /// <param name="time">Time in milliseconds</param>
-    public TimedBonus(Attribute parent, int time, int value = 0, float multiplier = 0) : base(value, multiplier) {
+    public TimedBonus(Attribute parent, int time, int value = 0, float multiplier = 0, string name = "") : base(value, multiplier, name) {
         this.parent = parent;
 
         //Setup timer

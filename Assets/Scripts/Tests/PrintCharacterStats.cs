@@ -11,11 +11,16 @@ public class PrintCharacterStats : MonoBehaviour {
 
 	[SerializeField]
 	private TMP_Text textStrength, textSpeed, textIntelligence;
+	
+	[SerializeField]
+	private TMP_Text textStrengthFlavor, textSpeedFlavor, textIntelligenceFlavor;
 
 	private void Update() {
 		textStrength.text = character.StrengthAttribute.CalculateValue().ToString();
 		textSpeed.text = character.SpeedAttribute.CalculateValue().ToString();
 		textIntelligence.text = character.IntelligenceAttribute.CalculateValue().ToString();
+		
+		
 	}
 
 }

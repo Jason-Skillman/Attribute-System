@@ -1,16 +1,22 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class BonusNode : MonoBehaviour {
 
+	[Header("Attribute")]
 	[SerializeField]
 	private AttributeType attributeType;
 	[SerializeField]
+	private string bonusName;
+	[SerializeField]
 	private int bonusValue;
+	
+	[Header("Node")]
 	[SerializeField]
 	private Color activeNodeColor;
 
@@ -18,12 +24,25 @@ public class BonusNode : MonoBehaviour {
 	[SerializeField]
 	private Character character;
 	[SerializeField]
+	private TMP_Text titleText, bodyText;
+	[SerializeField]
 	private Button button;
 	[SerializeField]
 	private Image image;
+	
+	private void Start() {
+		titleText.text = bonusName;
+
+		StringBuilder sb = new StringBuilder();
+		sb.Append("+");
+		sb.Append(bonusValue);
+		sb.Append(" ");
+		sb.Append(attributeType.ToString());
+		bodyText.text = sb.ToString();
+	}
 
 	public void ApplyBonus() {
-		StandardBonus bonus = new StandardBonus(bonusValue);
+		StandardBonus bonus = new StandardBonus(bonusValue, name: bonusName);
 
 		if(attributeType == AttributeType.Strength)
 			character.StrengthAttribute.AddBonus(bonus);
